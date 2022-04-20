@@ -1,32 +1,32 @@
-import { useState } from "react"
-
+import { useState } from "react";
+import axios from 'axios';
 
 const Login = () => {
 
-  const [data, setData] = useState({
-    id: "",
-    email: "",
-    password: "",
-  })
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleEmail = (e) => setData({ email: e.target.value });
-  const handlePassword = (e) => setData({ password: e.target.value });
+  const handleEmail = (e) => setUserName(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
 
-
-
-  const handleSubmit = () => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: data,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      username: username,
+      password:password
     };
-    fetch('http://localhost:8000/users', requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setData({ id: data.id })
-      });
-  }
+    // console.log(userData);
+
+    axios.post("http://localhost:4000/login", userData).then((response) => {
+      // console.log(response.status);
+      // console.log(response.data.token);
+      // console.log(response);
+      localStorage.setItem('id', response.data);
+      
+
+    });
+  };
+
 
   return (
     <div className="modal fade" id="login" tabIndex="-1" aria-labelledby="login" aria-hidden="true">
@@ -39,16 +39,16 @@ const Login = () => {
             </div>
             <div className="row">
               <div className="input registerForm">
-                <input type="email" className="form-control bg-input" placeholder="Email.." onChange={handleEmail} value={data.email} />
+                <input type="email" name="username" className="form-control bg-input" placeholder="Email.." onChange={handleEmail} value={username} />
               </div>
             </div>
             <div className="row">
               <div className="input registerForm">
-                <input type="password" className="form-control bg-input" placeholder="Password" onChange={handlePassword} value={data.password} />
+                <input type="password" name="password" className="form-control bg-input" placeholder="Password" onChange={handlePassword} value={password} />
               </div>
             </div>
             <div className="row login">
-              <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onSubmit={handleSubmit}>Submit</button>
+              <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
               <p className="text-center text-muted my-3">Forgot Password? <span className="forgot-password">Click Here</span></p>
             </div>
           </div>
