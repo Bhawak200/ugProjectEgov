@@ -2,7 +2,7 @@ import Login from "../Login";
 import Register from "../Register";
 import { Link, useNavigate } from "react-router-dom";
 import Complain from "../Complain";
-
+import Dataentry from "../Dataentry"
 
 
 const Header = (props) => {
@@ -57,7 +57,7 @@ const Header = (props) => {
               }
               {
                 loggedIn ?
-                  <button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Data Entry</button>
+                  <button className="nav-item-btn-2 navs complains" data-bs-toggle="modal" data-bs-target="#dataentry" >Data Entry</button>
                   :
                   <button className="nav-item-btn-2 navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
 
@@ -69,6 +69,7 @@ const Header = (props) => {
       <Login />
       <Register />
       <Complain />
+      <Dataentry />
     </nav>
   )
 }
