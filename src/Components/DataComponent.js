@@ -26,7 +26,7 @@ const DataComponent = () => {
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-card-list icons"></i></h5>
             <p className="card-text" data-val="450">0</p>
-            <h5 className="card-title">Total Complains</h5>
+            <h5 className="complain-card-title card-title">Total Complains</h5>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ const DataComponent = () => {
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-people-fill icons"></i></h5>
             <p className="card-text" data-val="500">0</p>
-            <h5 className="card-title">Total Workers</h5>
+            <h5 className="complain-card-title card-title">Total Workers</h5>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ const DataComponent = () => {
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-clipboard-check-fill icons"></i></h5>
             <p className="card-text" data-val="250">0</p>
-            <h5 className="card-title">Complains Resolved</h5>
+            <h5 className="complain-card-title card-title">Complains Resolved</h5>
           </div>
         </div>
 
