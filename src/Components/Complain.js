@@ -1,47 +1,73 @@
 
+import { useState } from "react"
+import axios from 'axios';
 
 const Complain = () => {
+
+  const [location, setLocation] = useState("");
+  const [imgLink, setImgLink] = useState("");
+  const [description, setDescription] = useState("");
+
+
+
+  const handleLocation = (e) => setLocation(e.location.value);
+  const handleImgLink = (e) => setImgLink(e.target.value);
+  const handledescription = (e) => setDescription(e.target.value)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userComplain = {
+      location: location,
+      imgLink: imgLink,
+      description: description
+    }
+    /*if (password != "" && username != "") {
+      axios.post("http://localhost:4000/login", userData).then((response) => {
+
+        if (response.data != '') {
+          localStorage.setItem('id', response.data);
+          if (localStorage.getItem('id')) window.location.reload();
+        } else alert('Please write correct credentials')
+      });
+    } else {
+      alert('Please write correct credentials');
+    }*/
+  };
+
+
+
+
   return (
-    <section className="section-rai">
-      <div className="row">
-        <div className="rai">
-          <div className="rai_form">
+    <div className="modal fade" id="complain" tabIndex="-1" aria-labelledby="complain" aria-hidden="true">
+      <div className="modal-dialog modal-dialog-centered  modal-sd">
+        <div className="modal-content">
+          <div className="container p-5">
+            <div className="row text-center">
+              <p className="login-title"> Complain</p>
+            </div>
 
-            <form className="form" action="/complain" method="POST">
-              <div className="rai_form_header">
-                <h2 className="rai_form_h2">Report an issue</h2>
+            <div className="row">
+              <div className="input registerForm">
+                <input type="text" name="password" className="form-control bg-input" placeholder="Location" onChange={handleLocation} value={location} />
               </div>
-
-              <div className="form_group">
-
-
-
-                <label for="report_pic" className="form_label"></label>
-                <textarea className="form_input" name="issue" rows="3" cols="40" id="issue"
-                  placeholder="report your issue"></textarea>
-                <label for="issue" className="form_label"></label>
-
-                <input type="text" name="location" className="form_input" placeholder="location" id="location" required />
-                <label for="location" className="form_label">location</label>
-
-                <input type="text" name="image" className="form_input" placeholder="image link" id="image" />
-                <label for="name" className="form_label">image link</label>
-
-
-
+            </div>
+            <div className="row">
+              <div className="input registerForm">
+                <textarea type="text" name="password" className="form-control bg-input" placeholder="Short Description" onChange={handledescription} value={description} />
               </div>
-
-              <div className="form_group">
-                <button type="submit" name="button" className="rai_submit_btn">
-                  Submit
-                </button>
+            </div>
+            <div className="row">
+              <div className="input registerForm">
+                <input type="text" name="password" className="form-control bg-input" placeholder="Image Link" onChange={handleImgLink} value={imgLink} />
               </div>
-            </form>
-
+            </div>
+            <div className="row login">
+              <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

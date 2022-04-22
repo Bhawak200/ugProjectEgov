@@ -18,16 +18,18 @@ const Login = () => {
       password: password
     };
     // console.log(userData);
-
-
-    axios.post("http://localhost:4000/login", userData).then((response) => {
-      // console.log(response.status);
-      // console.log(response.data.token);
-      // console.log(response);
-      localStorage.setItem('id', response.data);
-      if (localStorage.getItem('id')) window.location.reload();
-    });
-
+    if (password != "" && username != "") {
+      axios.post("http://localhost:4000/login", userData).then((response) => {
+        // console.log(response.status);
+        // console.log(response.data.token);
+        if (response.data != '') {
+          localStorage.setItem('id', response.data);
+          if (localStorage.getItem('id')) window.location.reload();
+        } else alert('Please write correct credentials')
+      });
+    } else {
+      alert('Please write correct credentials');
+    }
   };
 
 

@@ -1,6 +1,7 @@
 import Login from "../Login";
 import Register from "../Register";
 import { Link, useNavigate } from "react-router-dom";
+import Complain from "../Complain";
 
 
 
@@ -16,7 +17,7 @@ const Header = (props) => {
 
   const handleLogout = () => {
     localStorage.removeItem('id');
-    navigate("/");
+    if (!(localStorage.getItem('id'))) window.location.reload();
   }
 
   return (
@@ -35,21 +36,28 @@ const Header = (props) => {
             <li className="nav-item">
               <p className="navs">About</p>
             </li>
-            <li className="nav-item">
-              <p className="navs">Contact</p>
-            </li>
+
+
+            {loggedIn === true ?
+              <li className="nav-item">
+                <p className="navs">Profile</p>
+              </li>
+              : <li></li>
+            }
+            {loggedIn === true ? <li className="nav-item"><button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Logout</button></li> :
+              <li></li>}
             <li className="nav-item">
               {console.log(loggedIn)}
               {
                 loggedIn === true ?
                   // <button className="nav-item-btn-1 btn btn-success navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
                   // : <button className="nav-item-btn-1 btn btn-success navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
-                  <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
-                 : <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
+                  <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#complain">Complain</button>
+                  : <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
               }
               {
                 loggedIn ?
-                  <button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Logout</button>
+                  <button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Data Entry</button>
                   :
                   <button className="nav-item-btn-2 navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
 
@@ -60,6 +68,7 @@ const Header = (props) => {
       </div>
       <Login />
       <Register />
+      <Complain />
     </nav>
   )
 }

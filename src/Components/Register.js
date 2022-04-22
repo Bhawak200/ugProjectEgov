@@ -8,9 +8,11 @@ const Register = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
 
   const handleEmail = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const handleConfirmPassword = (e) => setconfirmPassword(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,15 +21,21 @@ const Register = () => {
       password: password
     };
 
+    if (password != "" && username != "" && password === confirmPassword) {
+      axios.post("http://localhost:4000/register", userData).then((response) => {
+        console.log(response.status);
+        console.log(response.data.token);
+        // return 
+        localStorage.setItem('id', response.data);
+        if (localStorage.getItem('id')) window.location.reload();
+      });
+    } else {
+      alert("Please fill the details");
+    }
+
     // console.log(userData);
 
-    axios.post("http://localhost:4000/register", userData).then((response) => {
-      console.log(response.status);
-      console.log(response.data.token);
-      // return 
-      localStorage.setItem('id', response.data);
-      if (localStorage.getItem('id')) window.location.reload();
-    });
+
   };
 
 
@@ -48,6 +56,11 @@ const Register = () => {
             <div className="row">
               <div className="input registerForm">
                 <input type="password" name="password" className="form-control bg-input" placeholder="Password" onChange={handlePassword} value={password} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="input registerForm">
+                <input type="password" name="password" className="form-control bg-input" placeholder="Confirm Password" onChange={handleConfirmPassword} value={confirmPassword} />
               </div>
             </div>
             <div className="row login">
