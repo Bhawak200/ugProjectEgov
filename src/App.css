@@ -307,21 +307,24 @@ transition: all 0.3s;
 
 .notification {
   /* height: 60vh !important; */
+  margin-top: 3rem;
+  margin-bottom: 3rem !important;
   margin-left: 1rem;
   margin-right: 1rem;
   background: none !important;
-  background-color: rgba(183, 202, 219,0.7) !important;
+  background-color: rgba(233, 213, 218,0.7) !important;
   border-radius: 5px !important;
+  box-shadow: 5px 5px 2rem rgba(0,0,0,.15);
   border: none;
 }
 
 .notification>.card-header {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .notification-items {
   color: #180A0A;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transition: all .2s;
 }
 .notification-items:hover{
