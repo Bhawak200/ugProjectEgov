@@ -1,9 +1,23 @@
 import Login from "../Login";
 import Register from "../Register";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 const Header = (props) => {
+  var loggedIn = false;
+
+  const id = localStorage.getItem('id');
+
+  if (id) loggedIn = true;
+  else loggedIn = false;
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('id');
+    navigate("/");
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-primary shadow-lg" >
@@ -25,9 +39,19 @@ const Header = (props) => {
               <p className="navs">Contact</p>
             </li>
             <li className="nav-item">
-              <button className="btn btn-success navs complains" style={{ "marginRight": "0.1rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
-              <button className="btn btn-success navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
+              {console.log(loggedIn)}
+              {
+                loggedIn === true ?
+                  <button className="btn btn-success navs complains" style={{ "marginRight": "0.1rem", "fontSize": "1.2546rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
+                  : <button className="btn btn-success navs complains" style={{ "marginRight": "0.1rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
+              }
+              {
+                loggedIn ?
+                  <button className="btn btn-success navs complains" onClick={handleLogout}>Logout</button>
+                  :
+                  <button className="btn btn-success navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
 
+              }
             </li>
           </ul>
         </div>

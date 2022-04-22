@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
 
@@ -8,23 +9,25 @@ const Login = () => {
 
   const handleEmail = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = {
       username: username,
-      password:password
+      password: password
     };
     // console.log(userData);
+
 
     axios.post("http://localhost:4000/login", userData).then((response) => {
       // console.log(response.status);
       // console.log(response.data.token);
       // console.log(response);
       localStorage.setItem('id', response.data);
-      
-
+      if (localStorage.getItem('id')) window.location.reload();
     });
+
   };
 
 

@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     const userData = {
       username: username,
-      password:password
+      password: password
     };
 
     // console.log(userData);
@@ -25,6 +25,8 @@ const Register = () => {
       console.log(response.status);
       console.log(response.data.token);
       // return 
+      localStorage.setItem('id', response.data);
+      if (localStorage.getItem('id')) window.location.reload();
     });
   };
 
