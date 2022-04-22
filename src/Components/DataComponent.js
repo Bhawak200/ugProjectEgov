@@ -20,9 +20,9 @@ const DataComponent = () => {
 
   return (
     <div className="data-style">
-      <h1 className="text-center">Some Data</h1>
+      <h1 className="text-center data-text"><span className="important-data">Import</span>ant Data</h1>
       <div className="card-group">
-        <div className="card">
+        <div className="card data-card">
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-card-list icons"></i></h5>
             <p className="card-text" data-val="450">0</p>
@@ -30,7 +30,7 @@ const DataComponent = () => {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card data-card">
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-people-fill icons"></i></h5>
             <p className="card-text" data-val="500">0</p>
@@ -38,7 +38,7 @@ const DataComponent = () => {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card data-card">
           <div className="card-body text-center">
             <h5 className="card-title"><i className="bi bi-clipboard-check-fill icons"></i></h5>
             <p className="card-text" data-val="250">0</p>

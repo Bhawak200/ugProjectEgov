@@ -7,7 +7,7 @@ const Charts = () => {
   const data = [
     { name: 'Total Complains', value: 500 },
     { name: 'Resolved', value: 100 },
-    { name: 'Progress', value: 4 },
+    { name: 'Progress', value: 40 },
   ];
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 

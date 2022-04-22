@@ -20,7 +20,7 @@ const Header = (props) => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary shadow-lg" >
+    <nav className="navbar navbar-expand-lg navbar-light bg-primary shadow-sm" >
       <div className="container-fluid">
         <h1 className="navbar-brand nav-title">EGOV</h1>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,14 +42,16 @@ const Header = (props) => {
               {console.log(loggedIn)}
               {
                 loggedIn === true ?
-                  <button className="btn btn-success navs complains" style={{ "marginRight": "0.1rem", "fontSize": "1.2546rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
-                  : <button className="btn btn-success navs complains" style={{ "marginRight": "0.1rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
+                  // <button className="nav-item-btn-1 btn btn-success navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
+                  // : <button className="nav-item-btn-1 btn btn-success navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
+                  <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Complain</button>
+                 : <button className="nav-item-btn-1 navs complains" style={{ "marginRight": "0.6rem" }} data-bs-toggle="modal" data-bs-target="#login">Sign In</button>
               }
               {
                 loggedIn ?
-                  <button className="btn btn-success navs complains" onClick={handleLogout}>Logout</button>
+                  <button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Logout</button>
                   :
-                  <button className="btn btn-success navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
+                  <button className="nav-item-btn-2 navs complains" data-bs-toggle="modal" data-bs-target="#register">Register</button>
 
               }
             </li>
