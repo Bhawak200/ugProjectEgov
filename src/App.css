@@ -7,6 +7,7 @@ body {
 
 .navbar {
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .nav-title {
@@ -694,18 +695,30 @@ td{
   padding: 0 2rem;
 }
 
-/* name of food inside each card */
+/* contributor card */
+.contributor-container{
+  background-color:  #4D96FF;
+  width: 60%;
+  margin: .5rem auto;
+  border-radius: 10px;
+  border: none;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 2px .3rem rgba(0,0,0,.15);
+}
+.contributor-tr{
+  overflow: auto;
+}
 .card__title {
   color: #fff;
   font-size: 1.2rem;
+  font-weight: 600;
+
 }
 
 
-.card__detail-box {
 
-  padding: 0 1rem;
-  border-right: 1px solid #ddd;
-}
 
 .card__detail {
   font-size: 1.2rem;
@@ -713,22 +726,26 @@ td{
   padding: 1.5rem 2rem;
 }
 .card__detail--coins {
-        font-weight: 900;
+        font-weight: 900 !important;
         text-transform: uppercase;
+        font-size: 1.3rem;
         background-image: linear-gradient(to top left, #FFD93D, #FFB72B);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
 .card__detail--earned {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #FFB72B;
  text-shadow:
      0 0 7px #FFB72B,
-     0 0 42px #FFFA4D,
+     0 0 10px #FFFA4D,
      0 0 82px #FFFA4D,
      0 0 92px #FFFA4D,
      0 0 102px #FFFA4D,
-     0 0 151px #FFFA4D;
+     0 0 110px #FFFA4D;
+}
+.card__detail--profile{
+  font-size: 1.3rem;  
 }

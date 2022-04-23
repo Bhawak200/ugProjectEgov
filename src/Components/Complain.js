@@ -20,7 +20,7 @@ const Complain = () => {
     e.preventDefault();
 
     const userComplain = {
-      id: localStorage.getItem('id'), 
+      id: localStorage.getItem('id'),
       location: location,
       imagelink : imagelink,
       issue: issue,
@@ -48,30 +48,34 @@ const Complain = () => {
               <p className="login-title"> Complain</p>
             </div>
 
+
             <div className="row">
               <div className="input registerForm">
-                <textarea type="text" name="issue" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
+                <input type="text" name="location" autoComplete= "off" className="form-control bg-input" placeholder="location" onChange={handleLocation} value={location} />
               </div>
             </div>
 
 
+                        <div className="row">
+                          <div className="input registerForm">
+                            <input type="text" name="waterbody" autoComplete= "off" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
+                          </div>
+                        </div>
+
+
+
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="waterbody" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
+                <textarea type="text" name="issue" autoComplete= "off" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
               </div>
             </div>
 
 
-            <div className="row">
-              <div className="input registerForm">
-                <input type="text" name="location" className="form-control bg-input" placeholder="location" onChange={handleLocation} value={location} />
-              </div>
-            </div>
 
 
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="imagelink" className="form-control bg-input" placeholder="Image Link" onChange={handleImagelink} value={imagelink} />
+                <input type="text" name="imagelink" autoComplete= "off" className="form-control bg-input" placeholder="Image Link" onChange={handleImagelink} value={imagelink} />
               </div>
             </div>
 

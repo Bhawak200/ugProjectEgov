@@ -50,7 +50,7 @@ const Register = () => {
             </div>
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="username" className="form-control bg-input" placeholder="Email id.." onChange={handleEmail} value={username} />
+                <input type="text" name="username" autoComplete= "off" className="form-control bg-input" placeholder="Email id.." onChange={handleEmail} value={username} />
               </div>
             </div>
             <div className="row">
