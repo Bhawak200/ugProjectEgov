@@ -5,33 +5,32 @@ import axios from 'axios';
 const Dataentry = () => {
 
   const [location, setLocation] = useState("");
-  const [imgLink, setImgLink] = useState("");
-  const [description, setDescription] = useState("");
+  const [waterbody, setWaterbody] = useState("");
+  const [data, setData] = useState("");
 
 
 
-  const handleLocation = (e) => setLocation(e.location.value);
-  const handleImgLink = (e) => setImgLink(e.target.value);
-  const handledescription = (e) => setDescription(e.target.value)
+  const handleLocation = (e) => setLocation(e.target.value);
+  const handleWaterbody = (e) => setWaterbody(e.target.value);
+  const handleData = (e) => setData(e.target.value)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const userComplain = {
+    const userData = {
+      id: localStorage.getItem('id'),
       location: location,
-      imgLink: imgLink,
-      description: description
+      waterbody: waterbody,
+      data: data
     }
-    /*if (password != "" && username != "") {
-      axios.post("http://localhost:4000/login", userData).then((response) => {
 
-        if (response.data != '') {
-          localStorage.setItem('id', response.data);
-          if (localStorage.getItem('id')) window.location.reload();
-        } else alert('Please write correct credentials')
+    if (location !== "" && waterbody !== "" && data !== "") {
+      axios.post("http://localhost:4000/dataentry", userData).then((response) => {
+        console.log(response);
       });
     } else {
-      alert('Please write correct credentials');
-    }*/
+      alert('Please complete all the required fields');
+    }
+
   };
 
 
@@ -43,24 +42,37 @@ const Dataentry = () => {
         <div className="modal-content">
           <div className="container p-5">
             <div className="row text-center">
-              <p className="login-title"> Complain</p>
+              <p className="login-title"> Data Entry</p>
             </div>
 
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="password" className="form-control bg-input" placeholder="Location" onChange={handleLocation} value={location} />
+                <input type="text" name="location" className="form-control bg-input" placeholder="Location" onChange={handleLocation} value={location} />
               </div>
             </div>
+
             <div className="row">
               <div className="input registerForm">
-                <textarea type="text" name="password" className="form-control bg-input" placeholder="Short Description" onChange={handledescription} value={description} />
+                <input type="text" name="waterbody" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
               </div>
             </div>
+
             <div className="row">
+              <div className="input registerForm">
+                <textarea type="text" name="data" className="form-control bg-input" placeholder="data" onChange={handleData} value={data} />
+              </div>
+            </div>
+
+
+
+
+            {/* <div className="row">
               <div className="input registerForm">
                 <input type="text" name="password" className="form-control bg-input" placeholder="Image Link" onChange={handleImgLink} value={imgLink} />
               </div>
-            </div>
+            </div> */}
+
+
             <div className="row login">
               <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
             </div>

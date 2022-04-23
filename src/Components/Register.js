@@ -21,7 +21,7 @@ const Register = () => {
       password: password
     };
 
-    if (password != "" && username != "" && password === confirmPassword) {
+    if (password !== "" && username !== "" && password === confirmPassword) {
       axios.post("http://localhost:4000/register", userData).then((response) => {
         console.log(response.status);
         console.log(response.data.token);

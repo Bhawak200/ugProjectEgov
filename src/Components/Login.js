@@ -18,11 +18,11 @@ const Login = () => {
       password: password
     };
     // console.log(userData);
-    if (password != "" && username != "") {
+    if (password !== "" && username !== "") {
       axios.post("http://localhost:4000/login", userData).then((response) => {
         // console.log(response.status);
         // console.log(response.data.token);
-        if (response.data != '') {
+        if (response.data !== '') {
           localStorage.setItem('id', response.data);
           if (localStorage.getItem('id')) window.location.reload();
         } else alert('Please write correct credentials')

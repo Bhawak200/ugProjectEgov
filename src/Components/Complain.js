@@ -5,35 +5,37 @@ import axios from 'axios';
 const Complain = () => {
 
   const [location, setLocation] = useState("");
-  const [imgLink, setImgLink] = useState("");
-  const [description, setDescription] = useState("");
+  const [imagelink, setImagelink] = useState("");
+  const [issue, setIssue] = useState("");
+  const [waterbody, setWaterbody] = useState("");
 
 
+  const handleLocation = (e) => setLocation(e.target.value);
+  const handleImagelink = (e) => setImagelink(e.target.value);
+  const handleIssue = (e) => setIssue(e.target.value)
+  const handleWaterbody = (e) => setWaterbody(e.target.value);
 
-  const handleLocation = (e) => setLocation(e.location.value);
-  const handleImgLink = (e) => setImgLink(e.target.value);
-  const handledescription = (e) => setDescription(e.target.value)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const userComplain = {
-      location: location,
-      imgLink: imgLink,
-      description: description
-    }
-    /*if (password != "" && username != "") {
-      axios.post("http://localhost:4000/login", userData).then((response) => {
 
-        if (response.data != '') {
-          localStorage.setItem('id', response.data);
-          if (localStorage.getItem('id')) window.location.reload();
-        } else alert('Please write correct credentials')
+    const userComplain = {
+      id: localStorage.getItem('id'), 
+      location: location,
+      imagelink : imagelink,
+      issue: issue,
+      waterbody: waterbody
+    }
+
+    if (location !== "" && issue !== "" && imagelink !== "" && waterbody!== "" ) {
+      axios.post("http://localhost:4000/complain", userComplain).then((response) => {
+        console.log(response);
       });
     } else {
-      alert('Please write correct credentials');
-    }*/
-  };
+      alert('Please complete all the required fields');
+    }
 
+  };
 
 
 
@@ -48,19 +50,31 @@ const Complain = () => {
 
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="password" className="form-control bg-input" placeholder="Location" onChange={handleLocation} value={location} />
+                <textarea type="text" name="issue" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
               </div>
             </div>
+
+
             <div className="row">
               <div className="input registerForm">
-                <textarea type="text" name="password" className="form-control bg-input" placeholder="Short Description" onChange={handledescription} value={description} />
+                <input type="text" name="waterbody" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
               </div>
             </div>
+
+
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="password" className="form-control bg-input" placeholder="Image Link" onChange={handleImgLink} value={imgLink} />
+                <input type="text" name="location" className="form-control bg-input" placeholder="location" onChange={handleLocation} value={location} />
               </div>
             </div>
+
+
+            <div className="row">
+              <div className="input registerForm">
+                <input type="text" name="imagelink" className="form-control bg-input" placeholder="Image Link" onChange={handleImagelink} value={imagelink} />
+              </div>
+            </div>
+
             <div className="row login">
               <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
             </div>
