@@ -44,7 +44,7 @@ const Header = (props) => {
               </li>
               : <li></li>
             }
-            {loggedIn === true ? <li className="nav-item"><button className="nav-item-btn-2 navs complains" onClick={handleLogout}>Logout</button></li> :
+            {loggedIn === true ? <li className="nav-item"><button className="nav-item-btn-logout navs complains" onClick={handleLogout}>Logout</button></li> :
               <li></li>}
             <li className="nav-item">
               {console.log(loggedIn)}

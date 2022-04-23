@@ -1,5 +1,5 @@
 import ReactPaginate from 'react-paginate';
-import ContentDisplay from './ContentDisplay';
+import ContributorCard from './ContributorCard';
 
 
 
@@ -68,8 +68,8 @@ class Pagination extends React.Component {
     return (
       <div>
 
-        <div className="wrapper row row-cols-1 row-cols-md-3">
-          {this.state.displayData.map((data, i) => <ContentDisplay key={i} data={data} />)}
+        <div className="wrapper row row-cols-1" >
+          {this.state.displayData.map((data, i) => <ContributorCard key={i} data={data} />)}
         </div>
 
         {this.state.displayData.length > 0 ?
