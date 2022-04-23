@@ -334,6 +334,7 @@ p.navs:hover {
   color: #180A0A;
   font-size: 1.2rem;
   transition: all .2s;
+
 }
 
 .notification-items:hover {
@@ -689,4 +690,45 @@ p.navs:hover {
 .rai_submit_btn:active {
   transform: translateY(-0.1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Item */
+
+.profile-item {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em;
+}
+
+.profile-email {
+  font-size: 1em;
+}
+
+
+
+.bi-file-earmark-plus {
+  font-size: 2em;
+}
+
+.bi {
+  color: #c6781b;
+}
+
+.bi-cash-coin {
+  margin: 1rem;
+  position: relative;
+  top: 0.2em;
+  font-size: 2rem;
+  color: #c6781b !important;
+}
+
+@media only screen and (max-width:576px) {
+  .notification-items {
+    font-size: 1em;
+    margin: 0.5rem
+  }
+
+  .bi-file-earmark-plus {
+    font-size: 1.5em;
+  }
 }
