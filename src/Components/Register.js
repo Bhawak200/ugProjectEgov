@@ -15,6 +15,7 @@ const Register = () => {
   const handleConfirmPassword = (e) => setconfirmPassword(e.target.value);
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     const userData = {
       username: username,

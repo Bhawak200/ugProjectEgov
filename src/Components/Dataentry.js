@@ -9,12 +9,12 @@ const Dataentry = () => {
   const [data, setData] = useState("");
 
 
-
   const handleLocation = (e) => setLocation(e.target.value);
   const handleWaterbody = (e) => setWaterbody(e.target.value);
   const handleData = (e) => setData(e.target.value)
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
     const userData = {
       id: localStorage.getItem('id'),
