@@ -22,12 +22,13 @@ const Complain = () => {
     const userComplain = {
       id: localStorage.getItem('id'),
       location: location,
-      imagelink : imagelink,
+      imagelink: imagelink,
       issue: issue,
       waterbody: waterbody
     }
 
-    if (location !== "" && issue !== "" && imagelink !== "" && waterbody!== "" ) {
+    if (location !== "" && issue !== "" && imagelink !== "" && waterbody !== "") {
+      // console.log(userComplain);
       axios.post("http://localhost:4000/complain", userComplain).then((response) => {
         console.log(response);
       });
@@ -51,31 +52,31 @@ const Complain = () => {
 
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="location" autoComplete= "off" className="form-control bg-input" placeholder="location" onChange={handleLocation} value={location} />
+                <input type="text" name="location" autoComplete="off" className="form-control bg-input" placeholder="location" onChange={handleLocation} value={location} />
               </div>
             </div>
 
 
-                        <div className="row">
-                          <div className="input registerForm">
-                            <input type="text" name="waterbody" autoComplete= "off" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
-                          </div>
-                        </div>
-
-
-
             <div className="row">
               <div className="input registerForm">
-                <textarea type="text" name="issue" autoComplete= "off" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
+                <input type="text" name="waterbody" autoComplete="off" className="form-control bg-input" placeholder="type of waterbody" onChange={handleWaterbody} value={waterbody} />
               </div>
             </div>
 
 
 
+            <div className="row">
+              <div className="input registerForm">
+                <textarea type="text" name="issue" autoComplete="off" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
+              </div>
+            </div>
+
+
+
 
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="imagelink" autoComplete= "off" className="form-control bg-input" placeholder="Image Link" onChange={handleImagelink} value={imagelink} />
+                <input type="text" name="imagelink" autoComplete="off" className="form-control bg-input" placeholder="Image Link" onChange={handleImagelink} value={imagelink} />
               </div>
             </div>
 

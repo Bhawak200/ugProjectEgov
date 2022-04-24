@@ -50,10 +50,10 @@ class Pagination extends React.Component {
 
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch("http://localhost:4000/users")
       .then(res => res.json())
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         this.setState({
           pageCount: Math.ceil(res.length / this.state.perPage),
           orgtableData: res,
@@ -61,7 +61,6 @@ class Pagination extends React.Component {
         })
       })
       .catch((err) => console.log(err));
-    console.log(this.state)
   }
 
   render() {
@@ -69,7 +68,8 @@ class Pagination extends React.Component {
       <div>
 
         <div className="wrapper row row-cols-1" >
-          {this.state.displayData.map((data, i) => <ContributorCard key={i} data={data} />)}
+          {console.log(this.state.displayData)}
+          {this.state.displayData.map((data, key) => <ContributorCard key={data._id} data={data} />)}
         </div>
 
         {this.state.displayData.length > 0 ?

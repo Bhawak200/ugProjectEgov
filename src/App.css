@@ -749,10 +749,16 @@ td {
   display: flex;
   justify-content: center;
   box-shadow: 2px 2px .3rem rgba(0, 0, 0, .15);
+  overflow: auto;
 }
 
-.contributor-tr {
+/*.contributor-tr {
   overflow: auto;
+}*/
+@media screen and (max-width : 576px) {
+  .contributor-container {
+    width: 95%;
+  }
 }
 
 .card__title {
