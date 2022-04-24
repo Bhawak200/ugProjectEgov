@@ -18,11 +18,11 @@ const Login = () => {
       password: password
     };
     // console.log(userData);
-    if (password != "" && username != "") {
+    if (password !== "" && username !== "") {
       axios.post("http://localhost:4000/login", userData).then((response) => {
         // console.log(response.status);
         // console.log(response.data.token);
-        if (response.data != '') {
+        if (response.data !== '') {
           localStorage.setItem('id', response.data);
           if (localStorage.getItem('id')) window.location.reload();
         } else alert('Please write correct credentials')
@@ -53,7 +53,7 @@ const Login = () => {
               </div>
             </div>
             <div className="row login">
-              <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
+              <button type="submit" className="nav-item-btn-2 btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
               <p className="text-center text-muted my-3">Forgot Password? <span className="forgot-password">Click Here</span></p>
             </div>
           </div>

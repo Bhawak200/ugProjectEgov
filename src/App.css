@@ -7,6 +7,7 @@ body {
 
 .navbar {
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .nav-title {
@@ -23,9 +24,7 @@ body {
 
 .navbar-nav {
   margin-left: 45%;
-
 }
-
 
 .navs {
   color: #0E185F !important;
@@ -53,13 +52,14 @@ p.navs:hover {
 }
 
 /* navbar buttons sign in register complain and logout */
-
 .nav-item-btn-1 {
   color: #0E185F !important;
   outline: 0;
   background-color: transparent !important;
   border: .05rem solid;
   transition: all 0.2s;
+  backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .nav-item-btn-2 {
@@ -68,6 +68,7 @@ p.navs:hover {
   background-color: #0E185F !important;
   transition: all 0.2s;
   border: none;
+  backface-visibility: hidden;
 }
 
 .nav-item-btn-1:hover {
@@ -76,12 +77,30 @@ p.navs:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
   border: none;
+  backface-visibility: hidden;
 }
 
 .nav-item-btn-2:hover {
-  color: #000000 !important;
-  background-color: #E59934 !important;
+  /* color: #000000 !important; */
+  background-color: #00C897 !important;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  /* border: .05rem solid; */
+}
+
+.nav-item-btn-logout {
+  background-color: #FF5151 !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+}
+
+.nav-item-btn-logout:hover {
+  color: #fff !important;
+  background-color: #F8485E !important;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border: none;
   transform: translateY(-1px);
 }
 
@@ -104,7 +123,6 @@ p.navs:hover {
   }
 }
 
-
 /* video */
 .carousel-img-style {
   height: 80vh;
@@ -118,7 +136,6 @@ p.navs:hover {
 
 /* data */
 .data-style {
-
   background-image: linear-gradient(to right,
       rgba(62, 219, 240, 0.7),
       rgba(133, 244, 255, 0.7)),
@@ -137,9 +154,7 @@ p.navs:hover {
   padding-top: 1rem;
 }
 
-
 /* data header text styling */
-
 .data-text {
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -161,7 +176,6 @@ p.navs:hover {
   transform: translateY(-.5rem) scale(1.05);
 }
 
-
 .card-mediadiv {
   margin: 1.2rem !important;
 }
@@ -176,20 +190,16 @@ p.navs:hover {
   border-radius: 2.5rem !important;
 
 } */
-
 /* .card-footer {
   background-color: rgba(198, 189, 189, 0.936) !important;
   margin-top: 0.3rem !important;
 } */
-
 /* .display-card-body {
   background-color: rgb(73, 144, 73) !important;
 } */
-
 /* .display-card:hover {
   transform: scale(1.1);
 } */
-
 .display-card {
   background: none !important;
   border-radius: 6px !important;
@@ -198,10 +208,8 @@ p.navs:hover {
   position: relative;
 }
 
-
 .display-text {
   font-size: 1rem !important;
-
 }
 
 .card-title {
@@ -222,11 +230,9 @@ p.navs:hover {
     margin-left: 5rem;
     margin-bottom: 2rem !important;
   }
-
 }
 
 /* Media Section */
-
 .media-style {
   color: white !important;
   height: 25vh;
@@ -246,7 +252,6 @@ p.navs:hover {
   padding: 0 1rem;
   font-weight: 600;
 }
-
 
 .media-style:nth-child(1) {
   background-color: rgba(31, 181, 123, 0.7) !important;
@@ -299,7 +304,6 @@ p.navs:hover {
 /* .media-style:nth-child(3) {
   background-color: rgb(73, 14, 128) !important;
 } */
-
 @media screen and (max-width:994px) {
   .media-style {
     height: 15vh;
@@ -312,7 +316,6 @@ p.navs:hover {
 }
 
 /* Notification */
-
 .notification {
   /* height: 60vh !important; */
   margin-top: 3rem;
@@ -355,7 +358,6 @@ p.navs:hover {
     width: 50%;
     position: relative;
     left: 20%;
-
   }
 }
 
@@ -384,13 +386,10 @@ p.navs:hover {
   font-size: 1rem !important;
 }
 
-
 @media only screen and (max-width : 994px) {
   .chart-style {
     font-size: auto !important;
   }
-
-
 }
 
 /* Footer */
@@ -416,13 +415,9 @@ p.navs:hover {
   margin: 1px 1rem
 }
 
-
 .footer-item-style:hover {
   color: goldenrod !important;
 }
-
-
-
 
 /* pagination */
 .pagination {
@@ -457,7 +452,6 @@ p.navs:hover {
   color: #fff;
   border-color: 2px solid rgba(77, 119, 255, 0.7);
   outline: none;
-
 }
 
 /*.pagination > li > a, .pagination > li > span{
@@ -479,7 +473,6 @@ p.navs:hover {
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0;
 }
-
 
 .registerForm {
   width: 100%;
@@ -534,17 +527,13 @@ p.navs:hover {
 }
 
 /* spinner */
-
-
 .spinner {
   position: relative;
   top: 25% !important;
   left: 50% !important;
 }
 
-
 /* Complain card */
-
 .complain-card {
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, .1);
 }
@@ -552,7 +541,6 @@ p.navs:hover {
 .complain-card-header {
   font-size: 1.8rem;
   color: #000B49;
-
 }
 
 .complain-card-text {
@@ -692,6 +680,7 @@ p.navs:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+
 /* Profile Item */
 
 .profile-item {
@@ -727,8 +716,84 @@ p.navs:hover {
     font-size: 1em;
     margin: 0.5rem
   }
+}
 
-  .bi-file-earmark-plus {
-    font-size: 1.5em;
-  }
+.bi-file-earmark-plus {
+  font-size: 1.5em;
+}
+
+
+/* contributor styling */
+
+
+td {
+  padding: 1rem !important;
+}
+
+
+/* container taking email of cpmtributors inside each card */
+.card__title-box {
+  background: linear-gradient(to bottom right, #14ffec, #8ef6e4);
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* contributor card */
+.contributor-container {
+  background-color: #4D96FF;
+  width: 60%;
+  margin: .5rem auto;
+  border-radius: 10px;
+  border: none;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 2px .3rem rgba(0, 0, 0, .15);
+}
+
+.contributor-tr {
+  overflow: auto;
+}
+
+.card__title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+
+
+
+.card__detail {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 1.5rem 2rem;
+}
+
+.card__detail--coins {
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  background-image: linear-gradient(to top left, #FFD93D, #FFB72B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card__detail--earned {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #FFB72B;
+  text-shadow:
+    0 0 7px #FFB72B,
+    0 0 10px #FFFA4D,
+    0 0 82px #FFFA4D,
+    0 0 92px #FFFA4D,
+    0 0 102px #FFFA4D,
+    0 0 110px #FFFA4D;
+}
+
+.card__detail--profile {
+  font-size: 1.3rem;
 }

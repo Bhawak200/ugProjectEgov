@@ -21,11 +21,11 @@ const Register = () => {
       password: password
     };
 
-    if (password != "" && username != "" && password === confirmPassword) {
+    if (password !== "" && username !== "" && password === confirmPassword) {
       axios.post("http://localhost:4000/register", userData).then((response) => {
         console.log(response.status);
         console.log(response.data.token);
-        // return 
+        // return
         localStorage.setItem('id', response.data);
         if (localStorage.getItem('id')) window.location.reload();
       });
@@ -50,7 +50,7 @@ const Register = () => {
             </div>
             <div className="row">
               <div className="input registerForm">
-                <input type="text" name="username" className="form-control bg-input" placeholder="Email id.." onChange={handleEmail} value={username} />
+                <input type="text" name="username" autoComplete= "off" className="form-control bg-input" placeholder="Email id.." onChange={handleEmail} value={username} />
               </div>
             </div>
             <div className="row">
@@ -64,7 +64,7 @@ const Register = () => {
               </div>
             </div>
             <div className="row login">
-              <button type="submit" className="btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
+              <button type="submit" className="nav-item-btn-1 btn deg_btn" data-bs-dismiss="modal" onClick={handleSubmit}>Submit</button>
             </div>
           </div>
         </div>
