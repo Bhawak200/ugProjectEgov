@@ -50,25 +50,45 @@ class Pagination extends React.Component {
 
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    var complainData = [
+    //   {
+    //   waterbody: "",
+    //   complain: "",
+    //   status: "Unresolved"
+    // }
+  ];
+    fetch("http://localhost:4000/users")
       .then(res => res.json())
       .then((res) => {
-        console.log(res);
+
+        for (var i = 0; i < res.length; i++) {
+          for (var j = 0; j < res[i].complain.length; j++) {
+            const temp = {
+              waterbody: res[i].complainwaterbody[j],
+              complain: res[i].complain[j],
+              status: "Unresolved"
+            }
+            complainData.push(temp);
+          }
+        }
         this.setState({
           pageCount: Math.ceil(res.length / this.state.perPage),
-          orgtableData: res,
-          displayData: res.slice(this.state.offset, this.state.offset + this.state.perPage)
+          orgtableData: complainData,
+          displayData: complainData.slice(this.state.offset, this.state.offset + this.state.perPage)
         })
       })
       .catch((err) => console.log(err));
-    console.log(this.state)
+    // console.log(this.state)
+    //console.log(complainData);
   }
 
   render() {
+
     return (
       <div>
 
         <div className="wrapper row row-cols-1 row-cols-md-3">
+          {console.log(this.state.displayData)}
           {this.state.displayData.map((data, i) => <ContentDisplay key={i} data={data} />)}
         </div>
 

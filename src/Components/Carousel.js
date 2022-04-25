@@ -2,6 +2,7 @@
 import VarnasiImg from "../Images/Varnasi.jpg"
 import VarnasiGhat from "../Images/VarnasiGhat.jpg"
 import VarnasiArti from "../Images/VarnasiArti.jpg"
+import Mnrega from "../Images/mnrega.jpg";
 
 const Carousel = () => {
   return (
@@ -13,7 +14,7 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={VarnasiImg} className="carousel-img-style" alt="..." />
+          <img src={Mnrega} className="carousel-img-style" alt="..." />
         </div>
         <div className="carousel-item">
           <img src={VarnasiGhat} className="carousel-img-style" alt="..." />

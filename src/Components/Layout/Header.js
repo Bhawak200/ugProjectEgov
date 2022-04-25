@@ -3,6 +3,7 @@ import Register from "../Register";
 import { Link, useNavigate } from "react-router-dom";
 import Complain from "../Complain";
 import Dataentry from "../Dataentry"
+import Profile from "../Profile";
 
 
 const Header = (props) => {
@@ -17,7 +18,11 @@ const Header = (props) => {
 
   const handleLogout = () => {
     localStorage.removeItem('id');
-    if (!(localStorage.getItem('id'))) window.location.reload();
+    if (!(localStorage.getItem('id'))) {
+      navigate('/');
+      window.location.reload();
+
+    }
   }
 
   return (
@@ -40,11 +45,11 @@ const Header = (props) => {
 
             {loggedIn === true ?
               <li className="nav-item">
-                <p className="navs">Profile</p>
+                <p className="navs" data-bs-toggle="modal" data-bs-target="#profile" style={{ "cursor": "pointer" }}>Profile</p>
               </li>
               : <li></li>
             }
-            {loggedIn === true ? <li className="nav-item"><button className="nav-item-btn-logout navs complains"  onClick={handleLogout}>Logout</button></li> :
+            {loggedIn === true ? <li className="nav-item"><button className="nav-item-btn-logout navs complains" onClick={handleLogout}>Logout</button></li> :
               <li></li>}
             <li className="nav-item">
               {console.log(loggedIn)}
@@ -70,6 +75,7 @@ const Header = (props) => {
       <Register />
       <Complain />
       <Dataentry />
+      <Profile />
     </nav>
   )
 }

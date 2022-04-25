@@ -337,6 +337,7 @@ p.navs:hover {
   color: #180A0A;
   font-size: 1.2rem;
   transition: all .2s;
+
 }
 
 .notification-items:hover {
@@ -680,10 +681,52 @@ p.navs:hover {
 }
 
 
+/* Profile Item */
+
+.profile-item {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em;
+}
+
+.profile-email {
+  font-size: 1em;
+}
+
+
+
+.bi-file-earmark-plus {
+  font-size: 2em;
+}
+
+.bi {
+  color: #c6781b;
+}
+
+.bi-cash-coin {
+  margin: 1rem;
+  position: relative;
+  top: 0.2em;
+  font-size: 2rem;
+  color: #c6781b !important;
+}
+
+@media only screen and (max-width:576px) {
+  .notification-items {
+    font-size: 1em;
+    margin: 0.5rem
+  }
+}
+
+.bi-file-earmark-plus {
+  font-size: 1.5em;
+}
+
+
 /* contributor styling */
 
 
-td{
+td {
   padding: 1rem !important;
 }
 
@@ -696,8 +739,8 @@ td{
 }
 
 /* contributor card */
-.contributor-container{
-  background-color:  #4D96FF;
+.contributor-container {
+  background-color: #4D96FF;
   width: 60%;
   margin: .5rem auto;
   border-radius: 10px;
@@ -705,11 +748,19 @@ td{
   min-width: 0;
   display: flex;
   justify-content: center;
-  box-shadow: 2px 2px .3rem rgba(0,0,0,.15);
-}
-.contributor-tr{
+  box-shadow: 2px 2px .3rem rgba(0, 0, 0, .15);
   overflow: auto;
 }
+
+/*.contributor-tr {
+  overflow: auto;
+}*/
+@media screen and (max-width : 576px) {
+  .contributor-container {
+    width: 95%;
+  }
+}
+
 .card__title {
   color: #fff;
   font-size: 1.2rem;
@@ -725,27 +776,30 @@ td{
   font-weight: 400;
   padding: 1.5rem 2rem;
 }
+
 .card__detail--coins {
-        font-weight: 900 !important;
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        background-image: linear-gradient(to top left, #FFD93D, #FFB72B);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  background-image: linear-gradient(to top left, #FFD93D, #FFB72B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .card__detail--earned {
   font-size: 1.3rem;
   font-weight: bold;
   color: #FFB72B;
- text-shadow:
-     0 0 7px #FFB72B,
-     0 0 10px #FFFA4D,
-     0 0 82px #FFFA4D,
-     0 0 92px #FFFA4D,
-     0 0 102px #FFFA4D,
-     0 0 110px #FFFA4D;
+  text-shadow:
+    0 0 7px #FFB72B,
+    0 0 10px #FFFA4D,
+    0 0 82px #FFFA4D,
+    0 0 92px #FFFA4D,
+    0 0 102px #FFFA4D,
+    0 0 110px #FFFA4D;
 }
-.card__detail--profile{
-  font-size: 1.3rem;  
+
+.card__detail--profile {
+  font-size: 1.3rem;
 }

@@ -19,7 +19,7 @@ const MediaSection = () => {
 
       <div className="card media-style card-mediadiv">
         <div className="card-body text-center">
-          <Link to="/reports" className="link-decoration"> <p className="card-title">Reports</p></Link>
+          <Link to="/reports" className="link-decoration"> <p className="card-title">Complains</p></Link>
         </div>
       </div>
 
