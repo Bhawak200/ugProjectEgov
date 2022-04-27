@@ -61,16 +61,11 @@ const Complain = () => {
               </div>
             </div>
 
-
-
             <div className="row">
               <div className="input registerForm">
                 <textarea type="text" name="issue" autoComplete="off" className="form-control bg-input" placeholder="Short Description" onChange={handleIssue} value={issue} />
               </div>
             </div>
-
-
-
 
             <div className="row">
               <div className="input registerForm">
