@@ -50,11 +50,13 @@ class Pagination extends React.Component {
 
 
   componentDidMount() {
-    var complainData = [{
-      waterbody: "",
-      complain: "",
-      status: "Unresolved"
-    }];
+    var complainData = [
+    //   {
+    //   waterbody: "",
+    //   complain: "",
+    //   status: "Unresolved"
+    // }
+  ];
     fetch("http://localhost:4000/users")
       .then(res => res.json())
       .then((res) => {

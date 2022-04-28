@@ -30,7 +30,7 @@ const Header = (props) => {
       <div className="container-fluid">
         <h1 className="navbar-brand nav-title">EGOV</h1>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+          <i className="bi bi-list"></i>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarToggler">
