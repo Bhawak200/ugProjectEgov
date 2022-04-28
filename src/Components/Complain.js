@@ -27,7 +27,7 @@ const Complain = () => {
       waterbody: waterbody
     }
 
-    if (location !== "" && issue !== "" && imagelink !== "" && waterbody !== "") {
+    if (location != "" && issue != "" && imagelink != "" && waterbody != "") {
       // console.log(userComplain);
       axios.post("http://localhost:4000/complain", userComplain).then((response) => {
         console.log(response);
