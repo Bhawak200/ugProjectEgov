@@ -12,7 +12,7 @@ const ContentDisplay = (props) => {
           <p className="complain-card-text card-text display-text">{data.complain}</p>
         </div>
         <div className="complain-card-footer card-footer">
-          <button type="button" className="btn complain-card-button rounded">{data.status} <i className="bi bi-arrow-right"></i></button>
+          <button type="button" className="btn complain-card-button rounded">{data.status}</button>
         </div>
       </div>
     </div>

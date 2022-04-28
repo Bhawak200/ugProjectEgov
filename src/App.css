@@ -15,11 +15,19 @@ body {
   left: 15%;
   font-size: 2rem;
   cursor: pointer;
-  color: #0E185F !important;
+  color: #ffffff !important;
 }
-
+.bi-list{
+  color: #fff !important;
+  font-size: 2rem !important;
+  border: none !important;
+}
+.navbar-toggler:focus{
+  box-shadow: 1px 1px .3rem rgba(255,255,255,1);
+  border: none !important;
+}
 .bg-primary {
-  background-color: #e3f2fd !important;
+  background-color: #000957 !important;
 }
 
 .navbar-nav {
@@ -27,7 +35,7 @@ body {
 }
 
 .navs {
-  color: #0E185F !important;
+  color: #fff !important;
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 0.5rem;
@@ -53,9 +61,10 @@ p.navs:hover {
 
 /* navbar buttons sign in register complain and logout */
 .nav-item-btn-1 {
-  color: #0E185F !important;
+  color: #000 !important;
   outline: 0;
-  background-color: transparent !important;
+  font-weight: 500;
+  background-color: #fff !important;
   border: .05rem solid;
   transition: all 0.2s;
   backface-visibility: hidden;
@@ -63,17 +72,19 @@ p.navs:hover {
 }
 
 .nav-item-btn-2 {
-  color: #fdfdfd !important;
+  color: #000 !important;
   outline: 0;
-  background-color: #0E185F !important;
+  font-weight: 500;
+  background-color: #fff !important;
+  border: .05rem solid;
   transition: all 0.2s;
-  border: none;
   backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .nav-item-btn-1:hover {
-  background-color: #5463FF !important;
-  color: #fdfdfd !important;
+  background-color: #E9EFC0 !important;
+  color: #000 !important;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
   border: none;
@@ -82,7 +93,7 @@ p.navs:hover {
 
 .nav-item-btn-2:hover {
   /* color: #000000 !important; */
-  background-color: #00C897 !important;
+  background-color: #B4ECE3 !important;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
   /* border: .05rem solid; */
@@ -539,11 +550,13 @@ p.navs:hover {
 }
 
 .complain-card-header {
+  text-transform: capitalize;
   font-size: 1.8rem;
   color: #000B49;
 }
 
 .complain-card-text {
+  text-transform: capitalize;
   font-weight: 500;
   color: #383838;
 }
@@ -558,18 +571,23 @@ p.navs:hover {
 }
 
 .complain-card-button {
-  border-bottom: 1.5px solid #0F0E0E;
-  color: #0F0E0E;
+  color: #fff;
+  font-size: 600;
+  text-align: center;
   padding: 0.3rem;
   transition: all 0.2s;
+  background-color: #8479E1;
+  box-shadow: 1px 2px 1rem rgba(0,0,0,.15);
+}
+.complain-card-button:hover {
+  color: #fff;
+  font-size: 600;
+  text-align: center;
+  padding: 0.3rem;
+  background-color: #8479E1;
+  box-sizing: 1px 1px 1rem rgba(0,0,0,.15);
 }
 
-.complain-card-button:hover {
-  background-color: #4D77FF;
-  color: #fff;
-  border-bottom: none;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
 
 /* Complain  Form */
 .rai_form_header {
