@@ -1,7 +1,30 @@
-
+import {useEffect , useState } from "react";
 import profilePic from "../Images/profilePic.png"
 
+
+
+
+
+
 const Profile = () => {
+
+
+  const [profile] = useState("");
+  const [username] = useState("");
+  const [email] = useState("");
+  const [coins] = useState("");
+
+  useEffect(() => {
+    const current_id =  localStorage.getItem('id');
+    fetch("http://localhost:4000/users/profile").then(res =>
+      res.json()
+    ).then((res) => {
+      console.log(res);
+    });
+
+  }, []);
+
+
   return (
     <div className="modal fade" id="profile" tabIndex="-1" aria-labelledby="profile" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered  modal-sd">
@@ -14,7 +37,7 @@ const Profile = () => {
             <div className="row">
               <div className="input registerForm">
                 <p className="profile-item">Bhawak Anand</p>
-                <p className="profile-item profile-email">bhawakanand1996@gmail.com</p>
+                <p className="profile-item profile-email">bhawakanand@gmail.com</p>
                 <p className="profile-item">Gold Coins<i className="bi bi-cash-coin"></i> - 57</p>
               </div>
             </div>
