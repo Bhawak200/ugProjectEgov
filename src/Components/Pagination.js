@@ -57,9 +57,12 @@ class Pagination extends React.Component {
     //   status: "Unresolved"
     // }
   ];
+
     fetch("http://localhost:4000/users")
       .then(res => res.json())
       .then((res) => {
+
+        console.log(res);
 
         for (var i = 0; i < res.length; i++) {
           for (var j = 0; j < res[i].complain.length; j++) {
