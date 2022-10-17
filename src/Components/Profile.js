@@ -3,9 +3,6 @@ import profilePic from "../Images/profilePic.png"
 
 
 
-
-
-
 const Profile = () => {
 
 
@@ -36,8 +33,8 @@ const Profile = () => {
             </div>
             <div className="row">
               <div className="input registerForm">
-                <p className="profile-item">Bhawak Anand</p>
-                <p className="profile-item profile-email">bhawakanand@gmail.com</p>
+                <p className="profile-item">ANKIT KUMAR</p>
+                <p className="profile-item profile-email">ankit@gmail.com</p>
                 <p className="profile-item">Gold Coins<i className="bi bi-cash-coin"></i> - 0</p>
               </div>
             </div>
